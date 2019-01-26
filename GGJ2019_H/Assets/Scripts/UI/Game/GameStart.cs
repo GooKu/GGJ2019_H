@@ -10,6 +10,8 @@ public class GameStart : MonoBehaviour
     private GameObject grid;
     [SerializeField]
     private Sprite[] sprites;
+    [SerializeField]
+    private ChildNumberProducter childNumberProducter;
 
     private string[] twitchCommand = new string[]
     {
@@ -37,6 +39,7 @@ public class GameStart : MonoBehaviour
     private void gameStart()
     {
         gameObject.SetActive(false);
+        childNumberProducter.Product();
         ArenaManager.Instance.StartGame();
     }
 }
