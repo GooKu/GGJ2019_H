@@ -54,6 +54,7 @@ public class Rusher : MonoBehaviour
     public void Detect(){
 
         RaycastHit hit;
+
         if (Physics.Raycast(_transform.position, _direction, out hit, _distance))
         {
             _destination = new Vector3(hit.point.x, 0, hit.point.z);
@@ -67,7 +68,7 @@ public class Rusher : MonoBehaviour
 
     private void Teleport(){
 
-        _transform.position = _destination -_destination.normalized* _bodyRadious;
+        _transform.position = _destination - _direction.normalized * _bodyRadious;
         OnTeleport?.Invoke();
     }
     
