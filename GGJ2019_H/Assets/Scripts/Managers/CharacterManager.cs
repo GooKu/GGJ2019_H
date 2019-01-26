@@ -47,14 +47,6 @@ public class CharacterManager : Singleton<CharacterManager>
         OnInitRefComplete?.Invoke();
     }
 
-    private void Start(){
-
-        Debug.Log(_mothers[0].gameObject.name);
-        Debug.Log(_children[0].gameObject.name);
-        Debug.Log(_children[1].gameObject.name);
-        Debug.Log(_children[2].gameObject.name);
-    }
-    
 #endregion
 
 }

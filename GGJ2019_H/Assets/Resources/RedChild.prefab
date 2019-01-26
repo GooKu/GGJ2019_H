@@ -169,6 +169,7 @@ MonoBehaviour:
   _turningSpeed: 250
   _key: 3
   _property: 0
+  _save: 0
   _earnRange: {x: 10, y: 20}
   _lost: 30
 --- !u!114 &4565515575869780012
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 0}
-  _distance: 2
+  _distance: 5
   _duration: 0.2
   _direction: {x: 0, y: 0, z: 0}
   _destination: {x: 0, y: 0, z: 0}
