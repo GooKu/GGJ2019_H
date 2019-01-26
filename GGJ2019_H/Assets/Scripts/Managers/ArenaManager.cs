@@ -17,6 +17,7 @@ public class ArenaManager : Singleton<ArenaManager>
     
     [Header("Timer Val")]
     [SerializeField] private float _gameTime;
+    public float ArenaTime => _gameTime;
     [SerializeField] private float _prepareTime;
     [SerializeField] private float _actionTime;
 

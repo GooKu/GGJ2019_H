@@ -15,11 +15,13 @@ public class CountDownBar : MonoBehaviour
     void Start()
     {
         timer.OnTimeChange += onTimeChange;
+        bar.fillAmount = 1;
+        timeText.text = ArenaManager.Instance.ArenaTime.ToString("0.00");
     }
 
     private void onTimeChange()
     {
-        float value = timer.Current / 1;
+        float value = timer.Current / ArenaManager.Instance.ArenaTime;
         bar.fillAmount = value;
         timeText.text = timer.Current.ToString("0.00");
     }
