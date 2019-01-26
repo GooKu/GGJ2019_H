@@ -13,6 +13,7 @@ public class GameResult : MonoBehaviour
     void Start()
     {
         ArenaManager.Instance.OnEndGame += endGameHandle;
+        gameResultUI.GetComponentInChildren<Button>().onClick.AddListener(returnToHamePage);
     }
 
     private void endGameHandle()
@@ -69,5 +70,10 @@ public class GameResult : MonoBehaviour
         score.text = winner.Save.ToString();
 
         winnerImage.sprite = winner.GetComponentInChildren<SpriteRenderer>().sprite;
+    }
+
+    private void returnToHamePage()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("HomePage");
     }
 }
