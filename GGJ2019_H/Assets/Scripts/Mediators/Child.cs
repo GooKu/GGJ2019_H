@@ -11,6 +11,9 @@ public class Child : MonoBehaviour
     [SerializeField] private Transform _transform;
     [SerializeField] private Rotater _rotater;
     [SerializeField] private Rusher _rusher;
+    [SerializeField] private ParticleSystem _earnEffect;
+    [SerializeField] private ParticleSystem _lostEffect;
+    [SerializeField] private ParticleSystem _saveEffect;
 
 #endregion
 
@@ -48,6 +51,9 @@ public class Child : MonoBehaviour
         _transform = transform;
         _rotater = GetComponent<Rotater>();
         _rusher = GetComponent<Rusher>();
+        _earnEffect = _transform.Find("Earn").GetComponent<ParticleSystem>();
+        _lostEffect = _transform.Find("Lost").GetComponent<ParticleSystem>();
+        _saveEffect = _transform.Find("Save").GetComponent<ParticleSystem>();
     }
 
     private void Start(){
@@ -70,6 +76,7 @@ public class Child : MonoBehaviour
 
             _save += _property;
             _property = 0;
+            _saveEffect.Play();
         }
 
         if (other.gameObject.CompareTag("Relative")){
@@ -115,11 +122,14 @@ public class Child : MonoBehaviour
     public void EarnMoney(){
 
         _property += Earn;
+        _earnEffect.Play();
+        Debug.Log(_earnEffect.isPlaying);
     }
 
     public void LostMoney(int money){
 
         _property -= money;
+        _lostEffect.Play();
         if (_property < 0) _property = 0;
     }
     
