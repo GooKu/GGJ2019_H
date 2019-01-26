@@ -45,7 +45,7 @@ public class ArenaManager : Singleton<ArenaManager>
     private void Start(){
 
         // Subscription
-        InputManager.Instance.OnWKeyDown += StartGame;
+//        InputManager.Instance.OnWKeyDown += StartGame;
         // InputManager.Instance.OnWKeyDown += Action;
         _arenaTimer.OnTimeIsOut += EndGame;
         _prepareTimer.OnTimeIsOut += Action;

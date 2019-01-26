@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class InputManager : Singleton<InputManager>
 {
@@ -8,10 +9,9 @@ public class InputManager : Singleton<InputManager>
     [Header("Input Val")]
     private bool _isInputAvailable;
     public bool IsInputAvailable{ get{ return _isInputAvailable; } }
+    #endregion
 
-#endregion
-
-# region Events
+    #region Events
 
     public event Observer._nullDelegate OnQKeyDown;
     public event Observer._nullDelegate OnWKeyDown;
