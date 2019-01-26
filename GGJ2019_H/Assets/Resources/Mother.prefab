@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1864234984517180366}
   - component: {fileID: 1864234984517180361}
   - component: {fileID: 1864234984517180373}
-  - component: {fileID: 1761125497}
   - component: {fileID: 1761125496}
+  - component: {fileID: 1761125497}
+  - component: {fileID: 7009194931610454620}
   m_Layer: 9
   m_Name: Mother
   m_TagString: Mother
@@ -111,6 +112,19 @@ MonoBehaviour:
   _isUnscale: 0
   _isStop: 0
   _isOut: 0
+--- !u!135 &1761125496
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864234984517180372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1761125497
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,7 +141,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &1761125496
+--- !u!135 &7009194931610454620
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
