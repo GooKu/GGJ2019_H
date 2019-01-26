@@ -23,8 +23,12 @@ public class Child : MonoBehaviour
 
     [Header("Money Val")]
     [SerializeField] private int _property;
+    public int Property => _property;
+
     [SerializeField] private Vector2 _earnRange;
     public int Earn{ get{ return (int)Random.Range(_earnRange.x, _earnRange.y); } }
+
+    [SerializeField] private int _lost;
 
 #endregion
 
@@ -59,9 +63,29 @@ public class Child : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
 
+        if (other.gameObject.CompareTag("Treasure")){
+
+            Treasure.Instance.Save(_property);
+            _property = 0;
+        }
+
         if (other.gameObject.CompareTag("Relative")){
 
             EarnMoney();
+        }
+
+        if (other.gameObject.CompareTag("Mother")){
+
+            if (_property > _lost){
+
+                other.gameObject.GetComponent<Mother>().Stole(_lost);
+                _property -= _lost;
+            }
+            else{
+                
+                other.gameObject.GetComponent<Mother>().Stole(_property);
+                _property = 0;
+            }
         }
     }
     
@@ -88,6 +112,12 @@ public class Child : MonoBehaviour
     public void EarnMoney(){
 
         _property += Earn;
+    }
+
+    public void LostMoney(int money){
+
+        _property -= money;
+        if (_property < 0) _property = 0;
     }
     
 #endregion

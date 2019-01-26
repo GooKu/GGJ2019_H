@@ -25,6 +25,10 @@ public class Mother : MonoBehaviour
     [SerializeField] private float _rushInterval;
     [SerializeField] private List<Vector3> _directions = new List<Vector3>();
 
+    [Header("Money Val")]
+    [SerializeField] private int _property;
+    public int Property => _property;
+
 #endregion
 
 #region Events
@@ -106,6 +110,13 @@ public class Mother : MonoBehaviour
         }
         OnRush?.Invoke();
     }
+
+    
+    public void Stole(int money){
+
+        _property += money;
+    }
+    
     
 #endregion
 

@@ -57,7 +57,7 @@ public class Rusher : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(_transform.position, _direction, out hit, _distance) && hit.collider.gameObject.CompareTag("LandScape"))
+        if (Physics.Raycast(_transform.position, _direction, out hit, _distance, 1 << 10) && hit.collider.gameObject.CompareTag("LandScape"))
         {
             _destination = new Vector3(hit.point.x, 0, hit.point.z);
         }

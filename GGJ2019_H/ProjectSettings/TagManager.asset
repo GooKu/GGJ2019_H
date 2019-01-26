@@ -7,6 +7,8 @@ TagManager:
   - Child
   - LandScape
   - Relative
+  - Mother
+  - Treasure
   layers:
   - Default
   - TransparentFX
@@ -17,9 +19,9 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
+  - Character
+  - Landscape
+  - Props
   - 
   - 
   - 
