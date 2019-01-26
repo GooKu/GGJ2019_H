@@ -40,7 +40,7 @@ public class ArenaManager : MonoBehaviour
     private void Start(){
 
         // Subscription
-        // InputManager.Instance.OnQKeyDown += Prepare;
+        InputManager.Instance.OnQKeyDown += Prepare;
         // InputManager.Instance.OnWKeyDown += Action;
         _prepareTimer.OnTimeIsOut += Action;
         _actionTimer.OnTimeIsOut += Prepare;

@@ -40,8 +40,8 @@ public class Child : MonoBehaviour
     private void Start(){
 
         // Subscription
-        InputManager.Instance.OnQKeyDown += Aim;
-        InputManager.Instance.OnWKeyDown += Select;
+        // InputManager.Instance.OnQKeyDown += Aim;
+        // InputManager.Instance.OnWKeyDown += Select;
         OnSelect += _rusher.Detect;
     }
     
