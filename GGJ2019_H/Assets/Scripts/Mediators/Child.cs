@@ -52,6 +52,7 @@ public class Child : MonoBehaviour
 
         // Subscription
         // InputManager.Instance.OnQKeyDown += Aim;
+        ArenaManager.Instance.OnEndGame += () => _rotater.IsStop = true;
         if (_key == Key.Q) InputManager.Instance.OnQKeyDown += Select;
         else if (_key == Key.C) InputManager.Instance.OnCKeyDown += Select;
         else if (_key == Key.M) InputManager.Instance.OnMKeyDown += Select;

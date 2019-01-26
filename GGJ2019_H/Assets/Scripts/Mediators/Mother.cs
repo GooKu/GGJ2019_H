@@ -54,6 +54,8 @@ public class Mother : MonoBehaviour
         // Subscription
         // InputManager.Instance.OnQKeyDown += Aim;
         InputManager.Instance.OnQKeyDown += Select;
+        ArenaManager.Instance.OnEndGame += () => { _timer.IsStop = true;
+                                                   _rotater.IsStop = true; };
         ArenaManager.Instance.OnPrepare += Aim;
         ArenaManager.Instance.OnAction += Action;
         _timer.OnTimeIsOut += Rush;
@@ -115,8 +117,7 @@ public class Mother : MonoBehaviour
     public void Stole(int money){
 
         _property += money;
-    }
-    
+    }    
     
 #endregion
 

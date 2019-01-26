@@ -180,6 +180,7 @@ MonoBehaviour:
   _rushCount: 0
   _rushInterval: 0.3
   _directions: []
+  _property: 0
 --- !u!114 &1864234984517180366
 MonoBehaviour:
   m_ObjectHideFlags: 0
