@@ -121,6 +121,36 @@ PrefabInstance:
       propertyPath: m_TwitchChat
       value: 
       objectReference: {fileID: 5174019028715843617}
+    - target: {fileID: 7824602345964552683, guid: 5acc83010ab348f428f7de49f3eb2af8,
+        type: 3}
+      propertyPath: m_BasicCommands.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824602345964552683, guid: 5acc83010ab348f428f7de49f3eb2af8,
+        type: 3}
+      propertyPath: m_NArgunmentCommands.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824602345964552683, guid: 5acc83010ab348f428f7de49f3eb2af8,
+        type: 3}
+      propertyPath: m_BasicCommands.Array.data[4].m_Message
+      value: MomGo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824602345964552683, guid: 5acc83010ab348f428f7de49f3eb2af8,
+        type: 3}
+      propertyPath: m_BasicCommands.Array.data[4].m_Description
+      value: Let MomGo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824602345964552683, guid: 5acc83010ab348f428f7de49f3eb2af8,
+        type: 3}
+      propertyPath: m_NArgunmentCommands.Array.data[2].m_Message
+      value: ChildGo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824602345964552683, guid: 5acc83010ab348f428f7de49f3eb2af8,
+        type: 3}
+      propertyPath: m_NArgunmentCommands.Array.data[2].m_Description
+      value: 'Use: !ChildGo 0~2'
+      objectReference: {fileID: 0}
     - target: {fileID: 7824602346847230833, guid: 5acc83010ab348f428f7de49f3eb2af8,
         type: 3}
       propertyPath: m_TwitchConnect
@@ -145,6 +175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnInt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 286816663508945354}
+    - target: {fileID: 7824602347315749293, guid: 5acc83010ab348f428f7de49f3eb2af8,
+        type: 3}
+      propertyPath: m_OnInt.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChildGo
       objectReference: {fileID: 0}
     - target: {fileID: 7824602347538920007, guid: 5acc83010ab348f428f7de49f3eb2af8,
         type: 3}
@@ -160,6 +195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnCommand.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 286816663508945354}
+    - target: {fileID: 7824602347685112112, guid: 5acc83010ab348f428f7de49f3eb2af8,
+        type: 3}
+      propertyPath: m_OnCommand.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MomGo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5acc83010ab348f428f7de49f3eb2af8, type: 3}
