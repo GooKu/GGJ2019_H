@@ -7,7 +7,7 @@ public class ChildNumber : MonoBehaviour
     private Text number;
 
     private Transform child;
-    private Vector3 offSet = new Vector3(0, 30, 0);
+    private Vector3 offSet = new Vector3(0, 35, 0);
 
     public void Setting(Child child, int number)
     {
