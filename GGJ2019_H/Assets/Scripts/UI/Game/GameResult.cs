@@ -61,7 +61,7 @@ public class GameResult : MonoBehaviour
 
         score.text = mom.Property.ToString();
 
-//        winnerImage.sprite = mom.GetComponentInChildren<SpriteRenderer>().sprite;
+        winnerImage.sprite = mom.GetComponentInChildren<SpriteRenderer>().sprite;
     }
 
     private void childWin(Child winner)
