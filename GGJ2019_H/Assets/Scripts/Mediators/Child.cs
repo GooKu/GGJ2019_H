@@ -18,6 +18,13 @@ public class Child : MonoBehaviour
 
     [Header("Rush Val")]
     [SerializeField] private float _turningSpeed;
+    public enum Key { Q, C, M, P }
+    [SerializeField] private Key _key;
+
+    [Header("Money Val")]
+    [SerializeField] private int _property;
+    [SerializeField] private Vector2 _earnRange;
+    public int Earn{ get{ return (int)Random.Range(_earnRange.x, _earnRange.y); } }
 
 #endregion
 
@@ -41,10 +48,21 @@ public class Child : MonoBehaviour
 
         // Subscription
         // InputManager.Instance.OnQKeyDown += Aim;
-        InputManager.Instance.OnWKeyDown += Select;
+        if (_key == Key.Q) InputManager.Instance.OnQKeyDown += Select;
+        else if (_key == Key.C) InputManager.Instance.OnCKeyDown += Select;
+        else if (_key == Key.M) InputManager.Instance.OnMKeyDown += Select;
+        else if (_key == Key.P) InputManager.Instance.OnPKeyDown += Select;
         ArenaManager.Instance.OnPrepare += Aim;
         ArenaManager.Instance.OnAction += () => { Select();
                                                   _rusher.Detect(); };
+    }
+
+    private void OnTriggerEnter(Collider other){
+
+        if (other.gameObject.CompareTag("Relative")){
+
+            EarnMoney();
+        }
     }
     
 #endregion
@@ -65,6 +83,11 @@ public class Child : MonoBehaviour
         _rotater.IsStop = true;
         _rusher.Direction = new Vector3(_transform.forward.x, 0, _transform.forward.z).normalized;
         OnSelect?.Invoke();
+    }
+
+    public void EarnMoney(){
+
+        _property += Earn;
     }
     
 #endregion

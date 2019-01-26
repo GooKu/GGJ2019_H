@@ -49,7 +49,7 @@ public class Mother : MonoBehaviour
 
         // Subscription
         // InputManager.Instance.OnQKeyDown += Aim;
-        // InputManager.Instance.OnWKeyDown += Select;
+        InputManager.Instance.OnQKeyDown += Select;
         ArenaManager.Instance.OnPrepare += Aim;
         ArenaManager.Instance.OnAction += Action;
         _timer.OnTimeIsOut += Rush;
@@ -75,6 +75,7 @@ public class Mother : MonoBehaviour
         if (_directions.Count >= _rushCountMax) return;
         _directions.Add(new Vector3(_transform.forward.x, 0, _transform.forward.z).normalized);
         OnSelect?.Invoke();
+        if (_directions.Count >= _rushCountMax) _rotater.IsStop = true;
     }
 
     // Complete Select and ready to rush
