@@ -41,8 +41,10 @@ public class Child : MonoBehaviour
 
         // Subscription
         // InputManager.Instance.OnQKeyDown += Aim;
-        // InputManager.Instance.OnWKeyDown += Select;
-        OnSelect += _rusher.Detect;
+        InputManager.Instance.OnWKeyDown += Select;
+        ArenaManager.Instance.OnPrepare += Aim;
+        ArenaManager.Instance.OnAction += () => { Select();
+                                                  _rusher.Detect(); };
     }
     
 #endregion
@@ -58,7 +60,7 @@ public class Child : MonoBehaviour
     }
 
     // Select Direction
-    private void Select(){
+    public void Select(){
 
         _rotater.IsStop = true;
         _rusher.Direction = new Vector3(_transform.forward.x, 0, _transform.forward.z).normalized;

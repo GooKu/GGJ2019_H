@@ -2,7 +2,7 @@
 
 
 [RequireComponent(typeof(Timer))]
-public class ArenaManager : MonoBehaviour
+public class ArenaManager : Singleton<ArenaManager>
 {
 #region Ref
     
@@ -23,8 +23,8 @@ public class ArenaManager : MonoBehaviour
 
 #region  Events
 
-    private event Observer._nullDelegate OnPrepare;
-    private event Observer._nullDelegate OnAction;
+    public event Observer._nullDelegate OnPrepare;
+    public event Observer._nullDelegate OnAction;
     
 #endregion
 
@@ -55,7 +55,6 @@ public class ArenaManager : MonoBehaviour
         _actionTimer.Current = _actionTime;
         _actionTimer.IsStop = false;
         OnAction?.Invoke();
-        Debug.Log("Action");
     }
 
     public void Prepare(){
@@ -63,7 +62,6 @@ public class ArenaManager : MonoBehaviour
         _prepareTimer.Current = _prepareTime;
         _prepareTimer.IsStop = false;
         OnPrepare?.Invoke();
-        Debug.Log("Prepare");
     }
     
 #endregion
