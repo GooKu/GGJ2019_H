@@ -24,6 +24,8 @@ public class Child : MonoBehaviour
     [Header("Money Val")]
     [SerializeField] private int _property;
     public int Property => _property;
+    [SerializeField] private int _save;
+    public int Save => _save;
 
     [SerializeField] private Vector2 _earnRange;
     public int Earn{ get{ return (int)Random.Range(_earnRange.x, _earnRange.y); } }
@@ -66,7 +68,7 @@ public class Child : MonoBehaviour
 
         if (other.gameObject.CompareTag("Treasure")){
 
-            Treasure.Instance.Save(_property);
+            _save += _property;
             _property = 0;
         }
 

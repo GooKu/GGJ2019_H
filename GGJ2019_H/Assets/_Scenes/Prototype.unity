@@ -1167,6 +1167,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueChild
       objectReference: {fileID: 0}
+    - target: {fileID: 4565515575869780008, guid: 93d5fa45b76473d40a02201ce5bdb883,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4565515575869780013, guid: 93d5fa45b76473d40a02201ce5bdb883,
         type: 3}
       propertyPath: m_LocalPosition.x
