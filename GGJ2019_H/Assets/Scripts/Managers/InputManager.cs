@@ -15,6 +15,8 @@ public class InputManager : Singleton<InputManager>
 
     public event Observer._nullDelegate OnQKeyDown;
     public event Observer._nullDelegate OnWKeyDown;
+    public event Observer._nullDelegate OnEKeyDown;
+    public event Observer._nullDelegate OnRKeyDown;
 
 # endregion
 
@@ -39,6 +41,8 @@ public class InputManager : Singleton<InputManager>
 
         if (Input.GetKeyDown(KeyCode.Q)) OnQKeyDown?.Invoke();
         if (Input.GetKeyDown(KeyCode.W)) OnWKeyDown?.Invoke();
+        if (Input.GetKeyDown(KeyCode.E)) OnEKeyDown?.Invoke();
+        if (Input.GetKeyDown(KeyCode.R)) OnRKeyDown?.Invoke();
     }
     
 #endregion
