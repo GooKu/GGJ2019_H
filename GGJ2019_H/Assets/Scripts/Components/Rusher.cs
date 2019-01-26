@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 public class Rusher : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Rusher : MonoBehaviour
 
     [Header("Rush Val")]
     [SerializeField] private float _distance;
+    [SerializeField] private float _duration;
     [SerializeField] private Vector3 _direction;
     public Vector3 Direction{ get{ return _direction; } set{ _direction = value; } }
 
@@ -55,7 +57,7 @@ public class Rusher : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(_transform.position, _direction, out hit, _distance))
+        if (Physics.Raycast(_transform.position, _direction, out hit, _distance) && hit.collider.gameObject.CompareTag("LandScape"))
         {
             _destination = new Vector3(hit.point.x, 0, hit.point.z);
         }
@@ -68,7 +70,9 @@ public class Rusher : MonoBehaviour
 
     private void Teleport(){
 
-        _transform.position = _destination - _direction.normalized * _bodyRadious;
+        _destination = _destination - _direction.normalized * _bodyRadious;
+        _transform.DOMove(_destination, _duration)
+                  .SetEase(Ease.OutCubic);
         OnTeleport?.Invoke();
     }
     

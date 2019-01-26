@@ -7,8 +7,8 @@ public class ArenaManager : Singleton<ArenaManager>
 #region Ref
     
     [Header("Internal Ref")]
+    [SerializeField] private Timer _arenaTimer;
     [SerializeField] private Timer _prepareTimer;
-
     [SerializeField] private Timer _actionTimer;
 
 #endregion
@@ -16,6 +16,7 @@ public class ArenaManager : Singleton<ArenaManager>
 #region  Val
     
     [Header("Timer Val")]
+    [SerializeField] private float _gameTime;
     [SerializeField] private float _prepareTime;
     [SerializeField] private float _actionTime;
 
@@ -23,9 +24,11 @@ public class ArenaManager : Singleton<ArenaManager>
 
 #region  Events
 
+    public event Observer._nullDelegate OnStartGame;
     public event Observer._nullDelegate OnPrepare;
     public event Observer._nullDelegate OnAction;
-    
+    public event Observer._nullDelegate OnEndGame;
+
 #endregion
 
 #region Monos
@@ -33,15 +36,17 @@ public class ArenaManager : Singleton<ArenaManager>
     private void Awake(){
 
         // Initial Ref
-        _prepareTimer = GetComponents<Timer>()[0];
-        _actionTimer = GetComponents<Timer>()[1];
+        _arenaTimer = GetComponents<Timer>()[0];
+        _prepareTimer = GetComponents<Timer>()[1];
+        _actionTimer = GetComponents<Timer>()[2];
     }
 
     private void Start(){
 
         // Subscription
-        InputManager.Instance.OnQKeyDown += Prepare;
+        InputManager.Instance.OnWKeyDown += StartGame;
         // InputManager.Instance.OnWKeyDown += Action;
+        _arenaTimer.OnTimeIsOut += EndGame;
         _prepareTimer.OnTimeIsOut += Action;
         _actionTimer.OnTimeIsOut += Prepare;
     }
@@ -49,6 +54,14 @@ public class ArenaManager : Singleton<ArenaManager>
 #endregion
 
 #region  Methods
+
+    public void StartGame(){
+
+        _arenaTimer.Current = _gameTime;
+        _arenaTimer.IsStop = false;
+        Prepare();
+        OnStartGame?.Invoke();
+    }
 
     public void Action(){
 
@@ -62,6 +75,13 @@ public class ArenaManager : Singleton<ArenaManager>
         _prepareTimer.Current = _prepareTime;
         _prepareTimer.IsStop = false;
         OnPrepare?.Invoke();
+    }
+
+    private void EndGame(){
+
+        _prepareTimer.IsStop = true;
+        _actionTimer.IsStop = true;
+        OnEndGame?.Invoke();
     }
     
 #endregion
