@@ -271,7 +271,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 297665249}
-        m_MethodName: return_menu
+        m_MethodName: ReturnMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d697c589145d0a42a91c4efed3f77fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _credit_win: {fileID: 338992029}
+  creditWindow: {fileID: 338992029}
 --- !u!1 &338992029
 GameObject:
   m_ObjectHideFlags: 0
