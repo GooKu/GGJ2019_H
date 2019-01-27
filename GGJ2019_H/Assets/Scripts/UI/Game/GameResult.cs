@@ -31,7 +31,7 @@ public class GameResult : MonoBehaviour
 
         foreach (var child in CharacterManager.Instance.Children)
         {
-            motherTotal += child.Save;
+            childTotal += child.Save;
         }
 
         if(motherTotal >= childTotal)
