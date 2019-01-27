@@ -163,7 +163,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4861,7 +4861,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -9568,8 +9568,8 @@ MonoBehaviour:
   _earnEffect: {fileID: 0}
   _lostEffect: {fileID: 0}
   _saveEffect: {fileID: 0}
-  _turningSpeed: 250
-  _key: 1
+  _turningSpeed: 200
+  _key: 3
   _property: 0
   _save: 0
   _earnRange: {x: 10, y: 20}
@@ -9686,7 +9686,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
