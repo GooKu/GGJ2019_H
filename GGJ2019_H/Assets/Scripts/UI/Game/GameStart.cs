@@ -39,7 +39,7 @@ public class GameStart : MonoBehaviour
     private void gameStart()
     {
         gameObject.SetActive(false);
-        childNumberProducter.Product();
+//        childNumberProducter.Product();
         ArenaManager.Instance.StartGame();
     }
 }
