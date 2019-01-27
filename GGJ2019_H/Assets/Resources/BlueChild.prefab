@@ -9569,7 +9569,7 @@ MonoBehaviour:
   _lostEffect: {fileID: 0}
   _saveEffect: {fileID: 0}
   _turningSpeed: 200
-  _key: 3
+  _key: 1
   _property: 0
   _save: 0
   _earnRange: {x: 10, y: 20}

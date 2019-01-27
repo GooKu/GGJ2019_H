@@ -77,6 +77,7 @@ public class Child : MonoBehaviour
             _save += _property;
             _property = 0;
             _saveEffect.Play();
+            MusicManager.Instance.MoneyCollect();
         }
 
         if (other.gameObject.CompareTag("Relative")){
@@ -96,6 +97,9 @@ public class Child : MonoBehaviour
                 other.gameObject.GetComponent<Mother>().Stole(_property);
                 _property = 0;
             }
+
+            _lostEffect.Play();
+            MusicManager.Instance.ChildScared();
         }
     }
     

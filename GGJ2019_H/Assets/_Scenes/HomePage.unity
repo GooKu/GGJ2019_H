@@ -1162,7 +1162,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Spacial Thanks\n\tTwitch\n\tDo Tween\n\tUniTwitchIRC\n\tOpen Game Arts\n\tLMMS"
+  m_Text: "Spacial Thanks\n\tTwitch\n\tDo Tween\n\tOpen Game Arts\n\tLMMS"
 --- !u!222 &1437342490
 CanvasRenderer:
   m_ObjectHideFlags: 0
