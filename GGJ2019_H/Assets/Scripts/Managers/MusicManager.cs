@@ -8,6 +8,7 @@ public class MusicManager : MonoBehaviour
     [Header("Internal Ref")]
     [SerializeField] private AudioSource _beginSource;
     [SerializeField] private AudioSource _repeatSource;
+    [SerializeField] private AudioSource _audioSource;
 
     [Header("External Ref")]
     [SerializeField] private AudioClip _begin;
