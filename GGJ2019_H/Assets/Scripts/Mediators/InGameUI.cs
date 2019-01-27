@@ -9,9 +9,13 @@ public class InGameUI : Singleton<InGameUI>
 
     [Header("Internal Ref")]
     [SerializeField] private Transform _transform;
+    [SerializeField] private Text _motherName;
     [SerializeField] private Text _mothersMoney;
+    [SerializeField] private Text _child0Name;
     [SerializeField] private Text _child0Money;
+    [SerializeField] private Text _child1Name;
     [SerializeField] private Text _child1Money;
+    [SerializeField] private Text _child2Name;
     [SerializeField] private Text _child2Money;
 
 #endregion
@@ -29,9 +33,13 @@ public class InGameUI : Singleton<InGameUI>
 
         // Initial Ref
         _transform = transform;
+        _motherName = _transform.GetChild(0).Find("Name").GetComponent<Text>();
         _mothersMoney = _transform.GetChild(0).Find("Money").GetComponent<Text>();
+        _child0Name = _transform.GetChild(1).Find("Name").GetComponent<Text>();
         _child0Money = _transform.GetChild(1).Find("Money").GetComponent<Text>();
+        _child1Name = _transform.GetChild(2).Find("Name").GetComponent<Text>();
         _child1Money = _transform.GetChild(2).Find("Money").GetComponent<Text>();
+        _child2Name = _transform.GetChild(3).Find("Name").GetComponent<Text>();
         _child2Money = _transform.GetChild(3).Find("Money").GetComponent<Text>();
     }
 
@@ -39,7 +47,10 @@ public class InGameUI : Singleton<InGameUI>
 
         // Subscription
         GameManager.Instance.OnUpdate += UpdateMoney;
-        Debug.Log(_names);    
+        _motherName.text = _names[0];
+        _child0Name.text = _names[1];
+        _child1Name.text = _names[2];
+        _child2Name.text = _names[3];
     }
     
 #endregion
