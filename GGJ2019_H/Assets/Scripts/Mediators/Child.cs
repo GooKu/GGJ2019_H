@@ -85,7 +85,7 @@ public class Child : MonoBehaviour
         }
 
         if (other.gameObject.CompareTag("Mother")){
-
+            
             if (_property > _lost){
 
                 other.gameObject.GetComponent<Mother>().Stole(_lost);
@@ -123,7 +123,6 @@ public class Child : MonoBehaviour
 
         _property += Earn;
         _earnEffect.Play();
-        Debug.Log(_earnEffect.isPlaying);
     }
 
     public void LostMoney(int money){
