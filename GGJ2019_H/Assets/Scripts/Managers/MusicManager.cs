@@ -58,12 +58,14 @@ public class MusicManager : Singleton<MusicManager>
 
     public void ChildScared()
     {
+        _audioSource.Stop();
         _audioSource.clip = _childScared;
         _audioSource.Play();
     }
 
     public void MoneyCollect()
     {
+        _audioSource.Stop();
         _audioSource.clip = _moneyCollect;
         _audioSource.Play();
     }
