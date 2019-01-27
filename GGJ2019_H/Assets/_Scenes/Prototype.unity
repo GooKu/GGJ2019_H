@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -537,9 +537,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 97731570}
-  - {fileID: 666938670}
   - {fileID: 1226307372}
   - {fileID: 4565515575869780013}
+  - {fileID: 666938670}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1228,7 +1228,7 @@ PrefabInstance:
     - target: {fileID: 4565515575869780013, guid: da0a7ff38cc5c5046b28bfd152ec2041,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4565515575869780013, guid: da0a7ff38cc5c5046b28bfd152ec2041,
         type: 3}
@@ -1414,6 +1414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beginSource: {fileID: 0}
   _repeatSource: {fileID: 0}
+  _audioSource: {fileID: 0}
   _begin: {fileID: 0}
   _repeat: {fileID: 0}
 --- !u!82 &1035951855
@@ -1760,7 +1761,7 @@ PrefabInstance:
     - target: {fileID: 4565515575869780013, guid: 93d5fa45b76473d40a02201ce5bdb883,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4565515575869780013, guid: 93d5fa45b76473d40a02201ce5bdb883,
         type: 3}
@@ -2443,7 +2444,7 @@ PrefabInstance:
     - target: {fileID: 4565515575869780013, guid: 9cc76a48cbe34714b878550f10277e4a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4565515575869780013, guid: 9cc76a48cbe34714b878550f10277e4a,
         type: 3}
